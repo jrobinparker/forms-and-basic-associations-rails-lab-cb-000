@@ -16,7 +16,7 @@
   <br>
   
   <%= f.fields_for :notes, @song.notes.build do |song_fields| %>
-    <%= song_fields.label :content %>
+    <%= song_fields.label :song_notes %>
     <%= song_fields.text_area :content %>
   <% end %>
   
