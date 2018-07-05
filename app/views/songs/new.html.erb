@@ -6,13 +6,13 @@
   <br>
 
   <%= f.fields_for :artists do |artist_fields|%>
-    <%= artist_fields.label :artist %>
-    <%= artist_fields.text_field :name %>
+    <%= artist_fields.label :artist_name %>
+    <%= artist_fields.text_field :artist_name %>
   <% end %>
   <br>
   
   <%= f.label :genres %>
-  <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  <%= f.collection_select :genre_id, Genre.all, :id, :genre_name %>
   <br>
   
   <%= f.fields_for :notes, @song.notes.build do |song_fields| %>
