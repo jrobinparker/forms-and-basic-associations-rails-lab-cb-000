@@ -5,8 +5,10 @@
   <%= f.text_field :title %>
   <br>
 
-  <%= f.label :artist %>
-  <%= f.text_field :name %>
+  <%= f.fields_for :artist %>
+    <%= f.label :artist %>
+    <%= f.text_field :name %>
+  <% end %>
   <br>
   
   <%= f.label :genres %>
