@@ -6,12 +6,12 @@ class Song < ActiveRecord::Base
   accepts_nested_attributes_for :notes
   
   def artist_name=(name)
-    self.artist = Artist.find_or_create_by(artist+name: :name)
+    self.artist = Artist.find_or_create_by(artist_name: :name)
   end 
   
   def artist_name 
     if self.artist
-      self.artist.name = nil 
+      self.artist.artist_name = nil 
     end 
   end 
   
