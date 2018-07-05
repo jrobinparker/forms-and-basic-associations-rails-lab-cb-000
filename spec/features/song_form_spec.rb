@@ -15,7 +15,7 @@ describe "the song form", :type => :feature do
     fill_in :song_artist_name, with: 'Tori Amos'
     find('input[name="commit"]').click
     expect(Song.last.artist.name).to eq 'Tori Amos'
-    expect(Artist.find_by(name: 'Tori Amos').songs.pluck(:title)).to include 'Little Earthquakes'
+    expect(Artist.find_by(artist_name: 'Tori Amos').songs.pluck(:title)).to include 'Little Earthquakes'
   end
 
   it 'creates a song with a genre' do
@@ -23,7 +23,7 @@ describe "the song form", :type => :feature do
     fill_in :song_title, with: 'Little Earthquakes'
     select 'Alternative', from: 'song_genre_id'
     find('input[name="commit"]').click
-    expect(Song.last.genre.name).to eq 'Alternative'
+    expect(Song.last.genre.genre_name).to eq 'Alternative'
     expect(Genre.find_by(name: 'Alternative').songs.pluck(:title)).to include 'Little Earthquakes'
   end
 
